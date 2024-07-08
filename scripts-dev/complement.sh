@@ -135,7 +135,7 @@ if [ -n "$use_editable_synapse" ]; then
         # And restore it on exit:
         synapse_pkg=`realpath synapse`
         trap "mv -f '$synapse_pkg/synapse_rust.abi3.so~host' '$synapse_pkg/synapse_rust.abi3.so'" EXIT
-    fi
+    fi -
 
     editable_mount="$(realpath .):/editable-src:z"
     if [ -n "$rebuild_editable_synapse" ]; then
